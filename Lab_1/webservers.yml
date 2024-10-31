@@ -7,7 +7,7 @@
     - name: Убедиться, что Nginx установлен
       package:
         name: nginx
-        update_cashe: yes
+        update_cache: yes
 
     - name: Копировать конфигурационные файлы Nginx
       copy:
@@ -17,11 +17,11 @@
     - name: Включить конфигурацию
       file:
         src: /etc/nginx/sites-available/default
-        dest: /etc/nginx/sites-enable/default
+        dest: /etc/nginx/sites-enabled/default
         state: link
 
     - name: Копировать файл index.html
-      copy:
+      template:
         src: index.html.j2
         dest: /usr/share/nginx/html/index.html
 
