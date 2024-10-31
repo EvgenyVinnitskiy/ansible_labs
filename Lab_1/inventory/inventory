@@ -1,0 +1,7 @@
+[webservers]
+ubuntu
+
+[webservers:vars]
+ansible_host=192.168.1.102
+ansible_user=ansible
+ansible_password=123
